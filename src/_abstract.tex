@@ -1,0 +1,26 @@
+%% Document coming from Julien Diot's Latex template.
+%% This template is available on github:
+%% https://github.com/juliendiot42/LatexTemplate
+%% Please don't forget to cite this links if you use this template.
+%%
+
+%% Abstract definition
+% this file define a new commande names "\myabstract"
+% wich contain the abstract of the document in several languages.
+
+\newcommand{\myabstract}[1][En]{
+	\ifthenelse{\equal{En}{#1}}{
+	Abstract in english...\\
+	\lipsum[1]
+	}{}
+	\ifthenelse{\equal{Fr}{#1}}{
+	Résumé en français...\\
+	\lipsum[2]
+	}{}
+% add other language with:
+%	\ifthenelse{\equal{OTHERLANG}{#1}}{
+%	OTHERLANG...\\
+%	\lipsum[2]
+%	}{}
+% ... 
+}

@@ -1,0 +1,74 @@
+%% Document coming from Julien Diot's Latex template.
+%% This template is available on github:
+%% https://github.com/juliendiot42/LatexTemplate
+%% Please don't forget to cite this links if you use this template.
+%%
+
+%% Title page
+% This page was inpired by Julien Enselme's title page see:
+% https://www.jujens.eu/posts/2013/Oct/20/latex-page-garde/
+
+% comand to create horizontal line
+\newcommand{\Hline}[1][0.3]{\rule{\linewidth}{#1 mm}}
+
+
+\begin{titlepage}
+\enlargethispage{2cm}
+
+  \begin{center}
+
+	% 1st header 
+    \textsc{\LARGE Main header on the top}\\[0.75cm]
+    
+	% second header
+    \textsc{\Large
+    Other header\\[0.5cm]
+    on several lines}\\[1.5cm]
+
+    % Title with horizontal lines
+    \Hline \\[0.4cm]
+    { \huge \bfseries  \thetitle \\[0.4cm] }
+	\Hline \\[0.6cm]
+
+    % Author and collaborators
+	
+    \begin{minipage}[t]{0.30\textwidth}
+      \begin{flushleft} \large
+        \emph{Author:} \theauthor \\
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[t]{0.65\textwidth}
+      \begin{flushright}
+      {\large
+        \emph{collaborators:}\quad\textsc{John Doe} {\normalsize(Status)}\\
+        \textsc{Jane Doe} {\normalsize(Status)}\\
+        \textsc{Johan Doe} {\normalsize(Status)}\\
+        \vspace{0.5cm}
+        
+        \emph{Reviewer:}\quad\textsc{Mr. Smith}\\
+        \vspace{0.5cm}
+        
+        \emph{Organization:}\quad\textsc{Latex Inc.}\\[0.5cm]
+        
+      }
+      \end{flushright}
+    \end{minipage}
+    
+    \vfill
+    % Add some images here 
+    \logoExample \hfill \logoExample
+    
+    \vfill
+    
+    
+    
+\end{center}
+
+% Bottom : Date 
+{\large  \thedate}
+
+  
+
+\end{titlepage}
+
+

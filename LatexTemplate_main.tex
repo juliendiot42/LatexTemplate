@@ -1,0 +1,178 @@
+%% Document coming from Julien Diot's Latex template.
+%% This template is available on github:
+%% https://github.com/juliendiot42/LatexTemplate
+%% Please don't forget to cite this links if you use this template.
+%%
+
+%% Main tex file.
+
+
+
+
+
+
+\documentclass[12pt,a4paper]{report}
+
+% ========== Packages =========
+% encoding and language:
+\usepackage[utf8]{inputenc}  % UTF-8 encoding (recommended)
+\usepackage[english]{babel}  % for english documents
+%\usepackage[french]{babel}  % for french documents
+
+% Math symbols:
+\usepackage{amsmath}  % LaTeX library of American Mathematical Society useful macros
+\usepackage{amssymb}  % To use math symbol
+\usepackage{amsfonts} % To use math font
+
+% figures / tables:
+\usepackage{graphicx} % For graphic settings
+\usepackage{supertabular} % For tables
+\usepackage{listings} % For code part eg: \begin{lstlisting}[language=R] ..... \end{lstlisting}
+
+% fonts :
+\usepackage{xcolor}   % For color managment
+
+% page layout:
+\usepackage{fullpage} % Reduce margin for title page
+
+% conditional expression in latex (example in "src/_abstract.tex")
+\usepackage{ifthen}
+
+% usefull package
+\usepackage{lipsum} % lorem ipsum with "\lipsum[1-nParagraph]" command
+\usepackage{comment} % To do comment on several lines with "\be­gin{com­ment} ... \end{com­ment}"
+\usepackage{titling} % use \thetitle, \theauthor and \thedate
+\usepackage{algorithmic} % easily write pseudo code. see: http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf
+
+
+
+% ========== Documents informations =========
+\author{Julien Diot}
+\title{Title of the document}
+\date{\today}
+\input{src/_abstract.tex} % the abstract are defined in an other file
+						  % use "\myabstract[En]" to include your english abstract
+
+\usepackage[pdftex]{hyperref} % use inlk and pdf informations
+\hypersetup{
+	bookmarks=true,         % show bookmarks bar?
+	unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+	pdftoolbar=true,        % show Acrobat’s toolbar?
+	pdfmenubar=true,        % show Acrobat’s menu?
+	pdffitwindow=true,      % page fit to window when opened
+	pdftitle={\thetitle},    % title
+	pdfauthor={\theauthor},     % author
+	% pdfsubject={subject of the document},   % subject of the document
+	pdfnewwindow=true,      % links in new window
+	pdfkeywords={Keyword1, Keyword2, ...}, % list of keywords
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,          % color of internal links
+	citecolor=black,        % color of links to bibliography
+	filecolor=black,      % color of file links
+	urlcolor=blue           % color of external links
+}
+
+
+
+%% ========== Document colors ==========
+\definecolor{darkRed}{RGB}{92,0,2}
+\definecolor{red}{RGB}{212,13,18}
+
+\definecolor{darkGreen}{RGB}{25,68,41}
+\definecolor{green}{RGB}{36,130,45}
+
+\definecolor{darkBlue}{RGB}{9,27,66}
+\definecolor{blue}{RGB}{19,72,227}
+
+
+
+%% ========== image path ==========
+\graphicspath{{src/img/}}
+\newcommand{\logoExample}[1][0.12]{\includegraphics[scale={#1}]{logo_latex.png}}
+%\newcommand{\myImg2}[1][0.5]{\includegraphics[scale={#1}]{image2.jpg}}
+
+
+
+% ========== Layout ==========
+\setlength{\parindent}{0pt} % paragraph indentation
+
+
+
+%% ========== My macros ==========
+% Math macro:
+\newcommand{\N}{\mathcal{N}}% Normal distribution symb
+\newcommand{\T}{\mathcal{T}}% Student distribution symb
+\newcommand{\R}{\mathbb{R}} % Real number symb
+
+
+
+
+
+
+
+% ====================================================================================
+% ====================================================================================
+% ========== Begin document ==========
+%
+% 
+\begin{document}
+
+
+%% ==========  Title Page ========== 
+\input{src/_titlePage.tex}
+
+
+%% ========== Abstract Page ==========
+\newpage
+\pagenumbering{roman}
+\begin{center}
+	\fbox{
+		\begin{minipage}[t]{1 \textwidth}
+		{\Large \textbf{Abstract:}}\\
+		\myabstract[En]
+		\end{minipage}
+	}\\[2cm]
+
+	\fbox{
+		\begin{minipage}[t]{1 \textwidth}
+		{\Large \textbf{Résumé :}}\\
+		\myabstract[Fr]
+		\end{minipage}
+	}
+
+\end{center}
+
+% ========== TOC ==========
+\newpage
+\setcounter{page}{1} % reset page number
+\pagenumbering{arabic} % and use arabic number
+
+\tableofcontents
+
+
+% ========== Content ==========
+\input{src/part0_introduction.tex}
+\input{src/part1_titlePartOne.tex}
+\input{src/part2_titlePartTwo.tex}
+\input{src/part3_conclusion.tex}
+
+
+
+% ========== Bibliography ==========
+\newpage
+\setcounter{page}{1} % reset page number
+\pagenumbering{Roman} % use roman capital letter for page number
+\addcontentsline{toc}{chapter}{Bibliography} % add biblio to TOC
+
+\bibliographystyle{siam}
+\bibliography{mybiblio}
+
+
+
+% ========== Appendix ==========
+\input{src/part4_appendix.tex}
+
+
+
+\end{document}
+
