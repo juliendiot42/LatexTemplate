@@ -26,7 +26,10 @@
 
 % figures / tables:
 \usepackage{graphicx} % For graphic settings
-\usepackage{supertabular} % For tables
+\usepackage{float} % loating figures
+\usepackage{tabularx} % auto size table
+\usepackage{supertabular} % large tables
+\usepackage{multirow} % table with cells on multiple row
 \usepackage{listings} % For code part eg: \begin{lstlisting}[language=R] ..... \end{lstlisting}
 
 % fonts :
@@ -34,6 +37,9 @@
 
 % page layout:
 \usepackage{fullpage} % Reduce margin for title page
+\usepackage{fancyhdr} % En-têtes et pieds de pages
+%\usepackage{lscape}   % use landscape pages
+\usepackage{pdflscape} % use landscape pages (with pdfLatex)
 
 % conditional expression in latex (example in "src/_abstract.tex")
 \usepackage{ifthen}
@@ -95,8 +101,8 @@
 
 % ========== Layout ==========
 \setlength{\parindent}{0pt} % paragraph indentation
-
-
+\usepackage[left=2.cm,right=2.cm,top=2.5cm,bottom=2.5cm, headsep=5mm]{geometry} % Marges
+\sloppy % do not cut word at the lines end
 
 %% ========== My macros ==========
 % Math macro:
@@ -104,7 +110,7 @@
 \newcommand{\T}{\mathcal{T}}% Student distribution symb
 \newcommand{\R}{\mathbb{R}} % Real number symb
 
-
+\DeclareRobustCommand\cmd[1]{\texttt{\textbackslash #1}}
 
 
 

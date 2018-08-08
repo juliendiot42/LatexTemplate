@@ -6,20 +6,134 @@
 
 %% Part one
 
-\chapter{Title of Part one}
+\chapter{Example of some \LaTeX  commands}
 
 
-\section{Section one}
-Example of citation \cite{myRef1}.
+\section{Insert references}
+% how to instert 
+First, fill the  bibTeX file (\texttt{.bib}) with your bibliography and place it in the same directory than your \texttt{main.tex} file.\\
 
-\lipsum
+You can then add  \verb=\cite{refKey}= in your text to insert a reference like this \cite{myRef1}.\\
+The bibliography will be automatically filled.\\
+
+The package \texttt{hyperref} will create some clickable links to the bibliography at the end of the document.
 
 
-\section{Section two}
-\lipsum[1]
+\section{Tables}
 
-\subsection{Sub-section one}
-\lipsum
+\subsection{With \texttt{tabular} }
 
-\subsection{Sub-section two}
-\lipsum
+\begin{tabular}{|l|c|r||c|l|r|}
+\hline 
+Col 1 & Col 2 & Col 3 & Larger column & \multicolumn{2}{c|}{People} \\ 
+\hline 
+a1 & b1 & c1 & d1 & GK & Guillaume Warmuz \\
+a2 & b2 & c2 & d2 & LB & Yohan Lachor \\
+a3 & b3 & c3 & d3 & DC & Jean-Guy Wallemme \\
+\hline
+\multirow{2}*{text}  & b4 & c4 & d4 & JD & Julien Diot \\
+					 & b5 & c5 & d5 & JD & Julien Diot bis \\
+\hline
+\end{tabular}
+
+\subsection{With \texttt{tabularx} }
+% \begin{tabularx}{TableWidth}{|c|p{ColumnWidth}|X|}  X for autosize column
+\begin{tabularx}{10cm}{|c|p{4cm}|X|}
+    \hline
+    1 & The two gentlemen of Verona & The Taming of the Shrew \\
+    \hline
+    2 & The comedy of errors & Love's Labour's Lost \\
+    \hline
+    3 & The Merchant of venice & The Merry Wives of Windsor \\
+    \hline
+\end{tabularx}
+
+
+
+\begin{landscape}
+\begin{center}
+
+\section{Big table}
+
+
+\tablefirsthead{
+	\hline
+	\multicolumn{1}{|c}{Number}
+	& \multicolumn{1}{c}{Letters}
+	& \multicolumn{1}{|c|}{Number!}\\
+	\hline}
+	
+\tablehead{
+	\hline
+	\multicolumn{3}{|l|}{\small\sl continued from previous page}\\
+    \hline
+    \multicolumn{1}{|c}{Number}
+	& \multicolumn{1}{c}{Letters}
+	& \multicolumn{1}{|c|}{Number!}
+	\\ \hline}
+	
+\tabletail{
+	\hline
+	\multicolumn{3}{|r|}{\small\sl continued on next page}\\
+	\hline}
+\tablelasttail{\hline}
+\bottomcaption{This table is split across pages}
+\par
+\begin{supertabular}{| r @{\quad -sep- }| r@{\hspace{6 cm}}| r |}
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\[5mm]% blank space
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+\hline
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+One & abcdef ghjijklmn & 123.456778 \\
+
+
+\end{supertabular} 
+
+\end{center}
+\end{landscape}
