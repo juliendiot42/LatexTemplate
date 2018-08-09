@@ -104,15 +104,65 @@
 \usepackage[left=2.cm,right=2.cm,top=2.5cm,bottom=2.5cm, headsep=5mm]{geometry} % Marges
 \sloppy % do not cut word at the lines end
 
+
+
+%% ========== Document structure ==========
+\addto\captionsenglish{\renewcommand{\chaptername}{Part}} % rename "Chapter" to "Part"
+\addto\captionsfrench{\renewcommand{\chaptername}{Partie}}% rename "Chapitre" to "Partie"
+
+%% ========== Header and footer ==========
+
+% redefine chapter name in normal case
+%% header / footer for content pages:
+\fancypagestyle{content}{%
+	\fancyhead{} % reset footer
+	\renewcommand{\headrulewidth}{0.4pt}
+	\fancyhead[L]{\leftmark} % chaper name 
+	\fancyhead[R]{\rightmark} % section name 
+	
+	\fancyfoot{} % reset footer
+	\renewcommand{\footrulewidth}{0.4pt}
+	\fancyfoot[L]{\theauthor\ - \textsc{A LaTeX Template.}}
+	\fancyfoot[C]{CONTENT}
+	\fancyfoot[R]{\thepage/\pageref{lastPage}}
+}
+
+
+%% header / footer for new chapter pages:
+\fancypagestyle{plain}{%
+	\fancyhead{} % reset footer
+	\renewcommand{\headrulewidth}{0pt}
+	
+	\fancyfoot{} % reset footer
+	\renewcommand{\footrulewidth}{0.4pt}
+	\fancyfoot[L]{\theauthor\ - \textsc{A LaTeX Template.}}
+	\fancyfoot[C]{PLAIN STYLE}
+	\fancyfoot[R]{\thepage/\pageref{lastPage}}
+}
+
+%% header / footer for abstract / Appendix pages:
+\fancypagestyle{abstractAppendix}{%
+	\fancyhead{} % reset footer
+	\renewcommand{\headrulewidth}{0pt}
+	
+	\fancyfoot{} % reset footer
+	\renewcommand{\footrulewidth}{0.4pt}
+	\fancyfoot[L]{\theauthor\ - \textsc{A LaTeX Template.}}
+	\fancyfoot[C]{abstractAppendix}
+	\fancyfoot[R]{\thepage}
+}
+
+
+
+
+
+
+
 %% ========== My macros ==========
 % Math macro:
 \newcommand{\N}{\mathcal{N}}% Normal distribution symb
 \newcommand{\T}{\mathcal{T}}% Student distribution symb
 \newcommand{\R}{\mathbb{R}} % Real number symb
-
-\DeclareRobustCommand\cmd[1]{\texttt{\textbackslash #1}}
-
-
 
 
 
@@ -129,8 +179,10 @@
 
 
 %% ========== Abstract Page ==========
-\newpage
-\pagenumbering{roman}
+\clearpage
+\pagestyle{abstractAppendix}
+\pagenumbering{roman} % page number: i
+
 \begin{center}
 	\fbox{
 		\begin{minipage}[t]{1 \textwidth}
@@ -148,34 +200,55 @@
 
 \end{center}
 
-% ========== TOC ==========
-\newpage
-\setcounter{page}{1} % reset page number
-\pagenumbering{arabic} % and use arabic number
 
+% ========== TOC ==========
+\clearpage
 \tableofcontents
+\thispagestyle{abstractAppendix}
+
 
 
 % ========== Content ==========
+\clearpage
+
+%% reset page
+\setcounter{page}{1} % reset page number
+\pagenumbering{arabic} % and use arabic number
+
+%% reset header / footer:
+\pagestyle{content}
+% re-def \chaptermark and \sectionmark
+\renewcommand{\chaptermark}[1]{%
+\markboth{\chaptername
+\ \thechapter.\ #1}{}}
+% redefine section name in normal case
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+%% soucre content files
 \input{src/part0_introduction.tex}
 \input{src/part1_titlePartOne.tex}
 \input{src/part2_titlePartTwo.tex}
 \input{src/part3_conclusion.tex}
 
+\label{lastPage} % label the last content page
 
 
 % ========== Bibliography ==========
-\newpage
+\clearpage
+\pagestyle{abstractAppendix}
+
 \setcounter{page}{1} % reset page number
 \pagenumbering{Roman} % use roman capital letter for page number
 \addcontentsline{toc}{chapter}{Bibliography} % add biblio to TOC
-
 \bibliographystyle{siam}
 \bibliography{mybiblio}
+\thispagestyle{abstractAppendix}
 
 
 
 % ========== Appendix ==========
+\clearpage
+
 \input{src/part4_appendix.tex}
 
 
