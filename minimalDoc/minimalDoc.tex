@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{CJKutf8}  % for japanese
+\usepackage[english]{babel}  % for english documents
+% \usepackage[french]{babel}  % for english documents
+
+\usepackage{titling} % use \thetitle, \theauthor and \thedate
+
+% ========== Layout ==========
+\setlength{\parindent}{0pt} % paragraph indentation
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, headsep=5mm]{geometry} % Marges (see https://www.overleaf.com/learn/latex/page_size_and_margins)
+\sloppy % do not cut word at the lines end
+\usepackage[none]{hyphenat} % do not cut word at the lines end
+
+\pagestyle{empty} % remove page number
+
+
+% ========== section style ==========
+% \usepackage{titlesec}
+% \titleformat{\section}{\normalfont\fontsize{12pt}{15pt}}{\thesection}{1em}{}
+
+
+
+% ========== Documents informations =========
+\author{Julien Diot}	
+\title{Title}
+\date{\today}
+
+\usepackage[pdftex]{hyperref} % use inlk and pdf informations
+\hypersetup{
+	bookmarks=true,         % show bookmarks bar?
+	unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+	pdftoolbar=true,        % show Acrobat’s toolbar?
+	pdfmenubar=true,        % show Acrobat’s menu?
+	pdffitwindow=true,      % page fit to window when opened
+	pdftitle={\thetitle},    % title
+	pdfauthor={\theauthor},     % author
+	% pdfsubject={subject of the document},   % subject of the document
+	pdfnewwindow=true,      % links in new window
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,          % color of internal links
+	citecolor=black,        % color of links to bibliography
+	filecolor=black,      % color of file links
+	urlcolor=blue           % color of external links
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section*{Small title}
+
+\begin{CJK}{UTF8}{min}
+こんにちは、\\
+
+ジュリアンです。\\
+
+よろしくお願いします。
+\end{CJK}	
+\bigskip
+
+Write some english/french here.
+
+
+\end{document}
