@@ -1,7 +1,10 @@
 # LatexTemplate
 
-This directory contains my LaTeX template for report document.
+This directory contains my LaTeX templates:
 
-This template can be useful to others. Feel free to use it and thank me at the end of your documents.
+- **minimalDoc**: Simple LaTeX document.
+- **report**: template with working directory structure for writing report with LaTeX
+
+These templates can be useful to others. Feel free to use it.
 
 I am not a LaTeX expert, but you can still report any issue on GitHub directly ([LatexTemplate/issues](https://github.com/juliendiot42/LatexTemplate/issues)), I'll do my best.
