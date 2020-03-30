@@ -23,6 +23,7 @@
 \usepackage{amsmath}  % LaTeX library of American Mathematical Society useful macros
 \usepackage{amssymb}  % To use math symbol
 \usepackage{amsfonts} % To use math font
+\usepackage{amsthm}   % Theorem, definition and proof
 
 % figures / tables:
 \usepackage{graphicx} % For graphic settings
@@ -88,7 +89,10 @@
 \definecolor{green}{RGB}{36,130,45}
 
 \definecolor{darkBlue}{RGB}{9,27,66}
-\definecolor{blue}{RGB}{19,72,227}
+\definecolor{blue}{RGB}{49, 107, 179}
+
+\definecolor{purple}{RGB}{179, 49, 172}
+\definecolor{brown}{RGB}{179, 121, 49}
 
 
 
@@ -169,7 +173,14 @@
 \newcommand{\T}{\mathcal{T}}% Student distribution symb
 \newcommand{\R}{\mathbb{R}} % Real number symb
 
+% environment
+\newenvironment{noteJD}
+{\color{blue} \textit{Notes Julien: }}
+{}
 
+\newenvironment{note2}
+{\color{darkRed} \textit{Notes style2: }}
+{}
 
 % ====================================================================================
 % ====================================================================================
@@ -186,6 +197,7 @@
 %% ========== Abstract Page ==========
 \clearpage
 \pagestyle{abstractAppendix}
+
 \pagenumbering{roman} % page number: i
 
 \begin{center}
@@ -245,6 +257,9 @@
 \setcounter{page}{1} % reset page number
 \pagenumbering{Roman} % use roman capital letter for page number
 \addcontentsline{toc}{chapter}{Bibliography} % add biblio to TOC
+% use: 
+% \nocite{bibKey}
+% to add references not used in the document
 \bibliographystyle{siam}
 \bibliography{mybiblio}
 \thispagestyle{abstractAppendix}
@@ -259,4 +274,3 @@
 
 
 \end{document}
-
